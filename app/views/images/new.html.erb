@@ -1,0 +1,6 @@
+
+<h3> Post a new image </h3>
+<%= simple_form_for @image do |form| %>
+  <%= form.attachment_field :image_upload, direct: true %>
+  <%= form.button :submit %>
+<% end %>

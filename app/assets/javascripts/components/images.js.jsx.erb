@@ -1,0 +1,54 @@
+var Images = React.createClass({
+
+  getInitialState(){
+    return {
+      images: []
+    }
+  },
+
+   fetchImages (){
+     var component = this;
+      return fetch("/api/images")
+      .then(function(response){
+        return response.json()
+    })
+
+  },
+
+   componentDidMount(){
+     var component = this
+     this.fetchImages().then(function(json){
+       var imageList = json.imagesFound.map(function(imageObject){
+         return imageObject.image_upload_id
+       })
+
+  var newState =  {images: imageList}
+
+    component.setState(newState)
+
+  })
+
+},
+   componentWillUnmount(){
+     clearInterval(this.fetchImagesInterval);
+   },
+
+   handleRefreshClick() {
+    this.fetchImages();
+  },
+
+  render() {
+  return <div>
+
+     <div className="text-right">
+       <button onClick={this.handleRefreshClick} className="btn btn-primary">Refresh</button>
+     </div>
+
+  {
+    this.state.images.map(function(image){
+         return <div className="image"><img src={image}/></div>
+      })
+    }
+</div>;
+},
+});
