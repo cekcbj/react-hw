@@ -26,6 +26,6 @@ k = User.create first_name: 'Kia',
                 password_confirmation:"12345678",
                 profile_image_id:"http://desktopbackgrounds4u.com/wp-content/gallery/download-cartoon-images/cartoon-walt-disney-cartoons-mickey-mouse-purple-129601.jpg"
 
-                b.images.create image_upload_id: "https://media4.giphy.com/media/tczJoRU7XwBS8/200w.gif"
-                b.images.create image_upload_id: "http://www.jpl.nasa.gov/assets/images/content/tmp/images/nasa_images(3x1).jpg"
-                k.images.create image_upload_id: "http://ichef.bbci.co.uk/images/ic/976x549_b/p02qyfq1.jpg"
+                # b.images.create image_upload_id: "https://media4.giphy.com/media/tczJoRU7XwBS8/200w.gif"
+                # b.images.create image_upload_id: "http://www.jpl.nasa.gov/assets/images/content/tmp/images/nasa_images(3x1).jpg"
+                # k.images.create image_upload_id: "http://ichef.bbci.co.uk/images/ic/976x549_b/p02qyfq1.jpg"

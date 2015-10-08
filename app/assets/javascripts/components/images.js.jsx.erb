@@ -18,13 +18,11 @@ var Images = React.createClass({
    componentDidMount(){
      var component = this
      this.fetchImages().then(function(json){
-       var imageList = json.imagesFound.map(function(imageObject){
-         return imageObject.image_upload_id
-       })
 
-  var newState =  {images: imageList}
+      console.log(json);
+      var newState =  {images: json.imagesFound}
 
-    component.setState(newState)
+      component.setState(newState)
 
   })
 
